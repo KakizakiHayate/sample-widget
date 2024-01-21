@@ -72,9 +72,9 @@ extension widget2Attributes.ContentState {
      }
 }
 
-#Preview("Notification", as: .content, using: widget2Attributes.preview) {
-   widget2LiveActivity()
-} contentStates: {
-    widget2Attributes.ContentState.smiley
-    widget2Attributes.ContentState.starEyes
-}
+//#Preview("Notification", as: .content, using: widget2Attributes.preview) {
+//   widget2LiveActivity()
+//} contentStates: {
+//    widget2Attributes.ContentState.smiley
+//    widget2Attributes.ContentState.starEyes
+//}
