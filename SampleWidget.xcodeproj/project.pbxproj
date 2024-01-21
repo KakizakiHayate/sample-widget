@@ -58,6 +58,8 @@
 		75BACAB02B5D04CA00496656 /* widget2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widget2.swift; sourceTree = "<group>"; };
 		75BACAB22B5D04CC00496656 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75BACAB42B5D04CC00496656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75BACABB2B5D2DC900496656 /* SampleWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SampleWidget.entitlements; sourceTree = "<group>"; };
+		75BACABC2B5D34FF00496656 /* widget2Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = widget2Extension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		75BACA542B5C1EA200496656 = {
 			isa = PBXGroup;
 			children = (
+				75BACABC2B5D34FF00496656 /* widget2Extension.entitlements */,
 				75BACA5F2B5C1EA200496656 /* SampleWidget */,
 				75BACAAB2B5D04CA00496656 /* widget2 */,
 				75BACA732B5C23F800496656 /* Frameworks */,
@@ -102,6 +105,7 @@
 		75BACA5F2B5C1EA200496656 /* SampleWidget */ = {
 			isa = PBXGroup;
 			children = (
+				75BACABB2B5D2DC900496656 /* SampleWidget.entitlements */,
 				75BACA602B5C1EA200496656 /* SampleWidgetApp.swift */,
 				75BACA622B5C1EA200496656 /* ContentView.swift */,
 				75BACA642B5C1EA400496656 /* Assets.xcassets */,
@@ -391,6 +395,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SampleWidget/SampleWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SampleWidget/Preview Content\"";
@@ -422,6 +427,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SampleWidget/SampleWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SampleWidget/Preview Content\"";
@@ -452,6 +458,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = widget2Extension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N28L9FHHL4;
@@ -480,6 +487,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = widget2Extension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N28L9FHHL4;

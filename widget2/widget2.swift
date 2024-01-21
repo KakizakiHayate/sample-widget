@@ -7,30 +7,60 @@
 
 import WidgetKit
 import SwiftUI
+import AVFoundation
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(), emoji: "😀")
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), emoji: "😀")
-        completion(entry)
+    func getSnapshot(
+        in context: Context,
+        completion: @escaping (
+            SimpleEntry
+        ) -> ()
+    ) {
+        let entry = SimpleEntry(
+            date: Date(),
+            emoji: "😀"
+        )
+        completion(
+            entry
+        )
     }
 
-    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+    func getTimeline(
+        in context: Context,
+        completion: @escaping (
+            Timeline<Entry>
+        ) -> ()
+    ) {
         var entries: [SimpleEntry] = []
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, emoji: "😀")
-            entries.append(entry)
+            let entryDate = Calendar.current.date(
+                byAdding: .hour,
+                value: hourOffset,
+                to: currentDate
+            )!
+            let entry = SimpleEntry(
+                date: entryDate,
+                emoji: "😀"
+            )
+            entries.append(
+                entry
+            )
         }
 
-        let timeline = Timeline(entries: entries, policy: .atEnd)
-        completion(timeline)
+        let timeline = Timeline(
+            entries: entries,
+            policy: .atEnd
+        )
+        completion(
+            timeline
+        )
     }
 }
 
@@ -44,12 +74,25 @@ struct widget2EntryView : View {
 
     var body: some View {
         VStack {
-            Text("Time:")
-            Text(entry.date, style: .time)
-
-            Text("Emoji:")
-            Text(entry.emoji)
+            Image(systemName: "speaker.wave.1")
+                .font(.title)
+            Text("音量\(loadVolume())")
         }
+//        .onAppear {
+//            let audioSession = AVAudioSession.sharedInstance()
+//            do {
+//                try audioSession.setActive(true)
+//                let volume = audioSession.outputVolume
+//                print("Output Volume: \(volume)")
+//            } catch {
+//                print("Failed to set audio session active: \(error)")
+//            }
+//        }
+    }
+
+    func loadVolume() -> Float {
+        let sharedDefaults = UserDefaults(suiteName: "group.com.hayate.app.SampleWidget")
+        return sharedDefaults?.float(forKey: "volume") ?? 1
     }
 }
 
